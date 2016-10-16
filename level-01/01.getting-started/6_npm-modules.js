@@ -6,6 +6,6 @@ request('http://www.phanvanphu.com', function(err, status, data) {
         console.log(data);
     }
     else {
-        console.error("Error: %s", err.code);
+        console.error("Error: %stream", err.code);
     }
 });

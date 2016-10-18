@@ -1,5 +1,8 @@
+
+
 var fork = require('child_process').fork;
 
+//  /home/phu/www/learning/nodejs/level-01/01.getting-started/honorstudent.js
 var child = fork(__dirname + '/honorstudent.js');
 
 child.on('message', function(m) {
@@ -7,4 +10,5 @@ child.on('message', function(m) {
     child.send({cmd: 'done'});
 });
 
+// Trigger
 child.send({cmd: 'double', number: 20});

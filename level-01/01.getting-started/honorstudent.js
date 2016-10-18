@@ -1,4 +1,4 @@
-// for use by 3-child-fork.js
+// for use by 25-child-fork.js
 
 var fun = require('./mathfun');
 
@@ -8,7 +8,8 @@ process.on('message', function(m) {
         fun.evenDoubler(m.number, function(err, result) {
             process.send({answer: result});
         });
-    } else if (m.cmd === 'done') {
+    }
+    else if (m.cmd === 'done') {
         process.exit();
     }
 });

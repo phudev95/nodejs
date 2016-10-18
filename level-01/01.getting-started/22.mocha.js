@@ -1,4 +1,5 @@
 // Run via the command line as "mocha 22.mocha.js"
+// Using 'mocha' on CMD, and in code file then using 'should'
 
 var should = require('should');
 var fun = require('./mathfun-test');

@@ -5,7 +5,7 @@ var t = setInterval(function () {
     console.log("Interval of 10 ms, count = " + count);
     if (count == 10)
         clearInterval(t);
-}, 10);
+}, 1000);
 
 setTimeout(function () {
     console.log("Timeout at 200ms");

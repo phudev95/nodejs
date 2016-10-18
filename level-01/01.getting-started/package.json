@@ -1,0 +1,14 @@
+{
+  "name": "01.getting-started",
+  "version": "1.0.0",
+  "description": "test basic of nodejs",
+  "main": "20.websockets.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "phudev95@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^1.5.0"
+  }
+}

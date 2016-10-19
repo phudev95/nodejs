@@ -103,5 +103,16 @@ Go to website [https://www.npmjs.com/search?q=underscore](https://www.npmjs.com/
 npm search underscore
 ```
 
+## Pruning
+```
+npm prune --production
+```
+
+## The NPM repo command
+```
+npm repo express
+npm repo underscore
+```
+
 ## Reference
 - **_[https://docs.npmjs.com/misc/config](https://docs.npmjs.com/misc/config)_**

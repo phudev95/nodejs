@@ -1,5 +1,22 @@
 {
   "dependencies": {
     "request": "^2.75.0"
-  }
+  },
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Learning and testing Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phudev95/nodejs.git"
+  },
+  "author": "Phu Phan <phudev95@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phudev95/nodejs/issues"
+  },
+  "homepage": "https://github.com/phudev95/nodejs#readme"
 }

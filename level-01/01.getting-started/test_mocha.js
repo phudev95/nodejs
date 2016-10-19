@@ -23,6 +23,21 @@ function plus (num1, num2) {
     return num1 + num2;
 }
 
+var user = {
+    name: 'phu',
+    pets: ['tobi', 'loki', 'jane', 'bandit']
+};
+
+function trace_callback(isThrow, fun) {
+    if (!isThrow) {
+        fun.call({}, null, {bar: 'Foo'});
+    }
+    else {
+        // Trace error
+        fun.call({}, new Error("isThrow is enabled."));
+    }
+}
+
 describe('TestMocha', function () {
     describe('Test case 1', function () {
         it('test case equal', function () {
@@ -49,6 +64,25 @@ describe('TestMocha', function () {
 
         it('test case does not throw', function () {
             plus.bind({}, 5, 5).should.not.throw();
+        });
+
+        it('test case should have property', function () {
+            user.should.have.property('name', 'phu');
+        });
+
+        it('test case count property of arrays is valid', function () {
+            user.should.have.property('pets')
+                .with.lengthOf(4);
+        });
+
+        it('trace error', function () {
+            // Arg 1 will accept trace or not trace error
+            trace_callback(false, function (err, result) {
+                should.not.exists(err);
+                should.exists(result);
+
+                result.bar.should.equal('Foo');
+            });
         });
     });
 });

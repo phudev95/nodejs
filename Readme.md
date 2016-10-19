@@ -114,5 +114,20 @@ npm repo express
 npm repo underscore
 ```
 
+# Publishing your own package
+#### Step 1: Setting up your NPM user for publishing
+- Init package
+- Init git
+
+#### Step 2: Preparing your project for publishing
+- npm adduser
+- npm publish
+- npm info <project-name>
+- npm repo
+
+#### Step 3: Publishing your package
+- npm tag <version-number>
+- npm push --tag
+
 ## Reference
 - **_[https://docs.npmjs.com/misc/config](https://docs.npmjs.com/misc/config)_**

@@ -2,7 +2,7 @@
   "dependencies": {
     "request": "^2.75.0"
   },
-  "name": "nodejs",
+  "name": "nodejs-pv",
   "version": "1.0.0",
   "description": "Learning and testing Node.js",
   "main": "index.js",

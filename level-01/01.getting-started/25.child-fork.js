@@ -1,5 +1,4 @@
-
-
+// http://i.imgur.com/B1mFs6s.png
 var fork = require('child_process').fork;
 
 //  /home/phu/www/learning/nodejs/level-01/01.getting-started/honorstudent.js

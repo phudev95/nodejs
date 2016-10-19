@@ -1,3 +1,7 @@
+// Scaling with Node’s “cluster” module
+// An experimental module leveraging child_process.fork()
+// Introduces a “Worker” class as well as master functions and events
+
 var cluster = require('cluster');
 var http = require('http');
 var numWorkers = 2;

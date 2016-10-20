@@ -121,15 +121,18 @@ npm repo underscore
 - Init git
 
 #### Step 2: Preparing your project for publishing
-- npm adduser
-- npm publish
-- npm info <project-name>
-- npm repo
+```
+npm adduser
+npm publish
+npm info <project-name>
+npm repo
+```
 
 #### Step 3: Publishing your package
-- npm tag <version-number>
-- npm push --tag
-
+```
+npm tag <version-number>
+npm push --tag
+```
 #### Step 4: Update version of package
 1. `Change version in file package.json`
 2. Add all change to git

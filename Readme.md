@@ -130,5 +130,24 @@ npm repo underscore
 - npm tag <version-number>
 - npm push --tag
 
+#### Step 4: Update version of package
+1. `Change version in file package.json`
+2. Add all change to git
+```
+git add .
+git commit -m "update version blabla"
+git tag
+git push --tags
+git push origin master
+```
+
+#### Step 5: Version beta
+1. Version of package: 1.1.0-beta.2
+```
+git tag 1.1.0-beta.2
+git push --tags
+npm publish --tag beta
+```
+
 ## Reference
 - **_[https://docs.npmjs.com/misc/config](https://docs.npmjs.com/misc/config)_**

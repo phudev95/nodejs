@@ -115,6 +115,7 @@ npm repo underscore
 ```
 
 # Publishing your own package
+**`MAJOR -> MINOR -> PATCH`**
 #### Step 1: Setting up your NPM user for publishing
 - Init package
 - Init git

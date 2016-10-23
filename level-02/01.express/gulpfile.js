@@ -10,8 +10,8 @@ gulp.task('style', function () {
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish', {
             verbose: true
-        }))
-        .pipe(jscs());
+        }));
+//        .pipe(jscs());
 });
 
 gulp.task('inject', function () {

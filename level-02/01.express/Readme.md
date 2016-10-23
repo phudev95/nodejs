@@ -27,11 +27,11 @@ var config = {
     password: 'pluralsight1@',
     server: 'gpnju6fwr2.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
     database: 'Books',
-
     options: {
         encrypt: true // Use this if you're on Windows Azure
     }
 };
+
 // Connect
 sql.connect(config, function (err) {
     if (err) {
@@ -43,6 +43,7 @@ sql.connect(config, function (err) {
 ```javascript
 var sql = require('mssql');
 var request = new sql.Request();
+
 // Query
 request.query('select * from books', function (err, recordset) {
     if (!err && recordset) {
@@ -53,11 +54,13 @@ request.query('select * from books', function (err, recordset) {
     }
 });
 ```
-##### Get books by id
+##### Get book by id
 ```javascript
+var sql = require('mssql');
 var id = 6;
 var ps = new sql.PreparedStatement();
 ps.input('id', sql.Int);
+
 ps.prepare('select * from books where id = @id', function (err) {
     ps.execute({id: id}, function (err, recordset) {
         if (recordset.length === 0) {

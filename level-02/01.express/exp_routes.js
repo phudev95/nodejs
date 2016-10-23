@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
 
 // Normal
 app.get('/', function (req, res) {
@@ -26,6 +28,27 @@ var module = function () {
         var id = req.params.id;
         res.send("Module c called, and param id: %s", id);
     });
+
+    // Test view
+    routes.get('/view', function (req, res) {
+        res.render('view', {
+            links: [
+                {
+                    text: "Home",
+                    href: "/home"
+                },
+                {
+                    text: "About",
+                    href: "/about"
+                },
+                {
+                    text: "Contact",
+                    href: "/contact"
+                }
+            ]
+        });
+    });
+
 
     return routes;
 }();

@@ -1,0 +1,9 @@
+<ul>
+    <%
+        for (var i = 0; i < links.length; i++) {
+    %>
+        <li>
+            <a href="<%- links[i].link %>"><%- links[i].text %></a>
+        </li>
+    <% } %>
+</ul>

@@ -19,5 +19,6 @@ npm i -g gulp
 - serve: Run 2 tasks above, after will config enviroment, watching code, and create port for web app.
 
 ## References
- - https://expressjs.com/en/guide/routing.html
+ - [https://expressjs.com/en/guide/routing.html](https://expressjs.com/en/guide/routing.html)
+ - [https://code.google.com/archive/p/embeddedjavascript/wikis/ViewHelpers.wiki](https://code.google.com/archive/p/embeddedjavascript/wikis/ViewHelpers.wiki)
 

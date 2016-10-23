@@ -6,17 +6,16 @@ var port = process.env.PORT || 5000;
 var nav = [{
     Link: '/Books',
     Text: 'Book'
-    }, {
+},
+{
     Link: '/Authors',
     Text: 'Author'
-    }];
+}];
 var bookRouter = require('./src/routes/bookRoutes')(nav);
 
 app.use(express.static('public'));
 app.set('views', './src/views');
-
 app.set('view engine', 'ejs');
-
 
 app.use('/Books', bookRouter);
 

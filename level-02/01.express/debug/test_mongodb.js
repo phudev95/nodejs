@@ -7,7 +7,10 @@ var uri = 'mongodb://localhost:27017/expressApp';
 var books = require('./books').books;
 
 app.get('/', function (req, res) {
-    res.send("1. /insert-all");
+    var html = '1. /insert-all<br>\
+                2. /all<br>\
+                3. find/<id><br>';
+    res.send(html);
 });
 
 // Insert all data to collection books

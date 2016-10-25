@@ -88,15 +88,19 @@
                         <!--/stories-->
                         <div class="row">
                             <br>
-                            <div class="col-md-2 col-sm-3 text-center">
+                            <div class="col-md-4 col-sm-3 text-center">
                                 Sign In
+                                <form action="/auth/signIn" name="signInForm" method="post">
+                                    Username: <input type="text" name="userName" id="userName" placeholder="username"><br />
+                                    Password: <input type="password" name="password" id="password" placeholder="password"><br />
+                                    <input type="submit" value="Sign In">
+                                </form>
                             </div>
-                            <div class="col-md-10 col-sm-9">
+                            <div class="col-md-8 col-sm-9">
                                 Sign Up
                                 <form action="/auth/signUp" name="signUpForm" method="post">
-                                    <input type="text" name="userName" id="userName" placeholder="username"><br />
-                                    <input type="password" name="password" id="password" placeholder="password"><br />
-                                    <input type="hidden" name="testhidden" id="testhidden" value="phudepjai"><br />
+                                    Username: <input type="text" name="userName" id="userName" placeholder="username"><br />
+                                    Password: <input type="password" name="password" id="password" placeholder="password"><br />
                                     <input type="submit" value="Sign Up">
                                 </form>
                             </div>

@@ -6,13 +6,13 @@ module.exports = function (app) {
 
     passport.serializeUser(function (user, done) {
         console.log('[TRACE] =>', 'serialize user');
-        console.log(user);
-        user.kakaka = 'kakakaka';
+        //console.log(user);
         done(null, user);
     });
 
     passport.deserializeUser(function (user, done) {
         console.log('[TRACE] =>', 'deserialize user');
+        //console.log(user);
         done(null, user);
     });
 

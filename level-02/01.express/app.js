@@ -8,11 +8,11 @@ var app = express();
 var port = process.env.PORT || 5000;
 
 var nav = [{
-    Link: '/Books',
+    Link: '/books',
     Text: 'Book'
 },
 {
-    Link: '/Authors',
+    Link: '/auth/profile',
     Text: 'Author'
 }];
 
@@ -41,13 +41,7 @@ app.use('/auth', authRouter);
 app.get('/', function (req, res) {
     res.render('index', {
         title: 'Hello from render',
-        nav: [{
-            Link: '/Books',
-            Text: 'Books'
-        }, {
-            Link: '/Authors',
-            Text: 'Authors'
-        }]
+        nav: nav
     });
 });
 

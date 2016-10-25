@@ -156,7 +156,12 @@ app.listen('8989', function () {
 });
 ```
 
+## Passport
+- Follow _Register_: **req.login** => `passport.serializeUser`
+- Follow _Output_: **req.user** => `passport.deserializeUser`
+- Follow _Login_: **passport._authenticate_('local', ...)** => **passport.serializeUser** => Execute callback of _authenticate_
+
+
 ## References
  - [https://expressjs.com/en/guide/routing.html](https://expressjs.com/en/guide/routing.html)
  - [https://code.google.com/archive/p/embeddedjavascript/wikis/ViewHelpers.wiki](https://code.google.com/archive/p/embeddedjavascript/wikis/ViewHelpers.wiki)
-

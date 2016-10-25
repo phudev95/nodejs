@@ -31,8 +31,10 @@ require('./config/passport')(app);
 
 // Add routes
 var bookRouter = require('./src/routes/bookRoutes')(nav);
+var adminRouter = require('./src/routes/adminRoutes')(nav);
 var authRouter = require('./src/routes/authRoutes')();
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 app.use('/auth', authRouter);
 
 // Root

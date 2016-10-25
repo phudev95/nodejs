@@ -1,21 +1,21 @@
 {
-  "name": "library",
-  "version": "0.0.0",
-  "authors": [
-    "Jonathan Mills <jonathanfmills@gmail.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "~3.3.5",
-    "font-awesome": "~4.4.0"
-  },
+    "name": "library",
+    "version": "0.0.0",
+    "authors": [
+        "Jonathan Mills <jonathanfmills@gmail.com>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "~3.3.5",
+        "font-awesome": "~4.4.0"
+    },
     "overrides": {
         "bootstrap": {
             "main": [

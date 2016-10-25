@@ -1,9 +1,12 @@
 // Init express
 var express = require('express');
-var app = express();
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 
-// Config port + routes
+var app = express();
 var port = process.env.PORT || 5000;
+
 var nav = [{
     Link: '/Books',
     Text: 'Book'
@@ -12,13 +15,27 @@ var nav = [{
     Link: '/Authors',
     Text: 'Author'
 }];
-var bookRouter = require('./src/routes/bookRoutes')(nav);
+
+// Middleware
 app.use(express.static('public'));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
-app.use('/Books', bookRouter);
+app.use(cookieParser());
+app.use(session({secret: 'asdasdasd'}));
 
+require('./config/passport')(app);
+
+
+// Add routes
+var bookRouter = require('./src/routes/bookRoutes')(nav);
+var authRouter = require('./src/routes/authRoutes')();
+app.use('/books', bookRouter);
+app.use('/auth', authRouter);
+
+// Root
 app.get('/', function (req, res) {
     res.render('index', {
         title: 'Hello from render',
@@ -32,10 +49,11 @@ app.get('/', function (req, res) {
     });
 });
 
+// /books
 app.get('/books', function (req, res) {
     res.send('Hello Books');
 });
 
 app.listen(port, function (err) {
-    console.log('running server on port ' + port);
+    console.log('Running server on 127.0.0.1:' + port);
 });

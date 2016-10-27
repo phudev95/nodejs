@@ -7,18 +7,21 @@ var books = [
         title: 'War and Peace',
         genre: 'Historical Fiction',
         author: 'Lev Nikolayevich Tolstoy',
+        id: 656,
         read: false
     },
     {
         title: 'Les Misérables',
         genre: 'Historical Fiction',
         author: 'Victor Hugo',
+        id: 24280,
         read: false
     },
     {
         title: 'The Time Machine',
         genre: 'Science Fiction',
         author: 'H. G. Wells',
+        id: 2493,
         read: false
     },
     {

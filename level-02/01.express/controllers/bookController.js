@@ -35,12 +35,24 @@ var bookController = function (bookService, nav) {
 
             collection.findOne({_id: id},
                 function (err, results) {
-                    res.render('bookView', {
-                        title: 'Books',
-                        nav: nav,
-                        book: results
-                    });
-
+                    if (results.id) {
+                        // Get book from goodreadService
+                        bookService.getBookById(results.id, function (err, book) {
+                            res.render('bookView', {
+                                title: 'Books',
+                                nav: nav,
+                                book: book
+                            });
+                        });
+                    }
+                    else {
+                        // Use data default in DB
+                        res.render('bookView', {
+                            title: 'Books',
+                            nav: nav,
+                            book: results
+                        });
+                    }
                 }
             );
 

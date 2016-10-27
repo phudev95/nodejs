@@ -33,7 +33,7 @@ var router = function () {
             // Login with local.strategy local, after it with show error or execute callback
             passport.authenticate('local', {failureRedirect: '/'}),
             function (req, res) {
-                res.redirect('/auth/profile');
+                res.redirect('/books');
             }
         );
 

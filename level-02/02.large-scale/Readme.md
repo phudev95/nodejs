@@ -105,6 +105,89 @@ exports.City = function (name) {
 };
 ```
 #### 5. Abandon nested callbacks in favor of promises or async patterns
+```javascript
+// Is bad
+$(document).ready(function() {
+    $.get("/api/destinations", function(result) {
+        if (result.success) {
+            if ($("#userName").length > 0) {
+                $.get("/api/user/" + userid, function(result) {
+                    if (result.success) {
+                        // ...
+                    }
+                });
+            }
+        } else {
+            alert("Failed to get destinations");
+        }
+    });
+});
+
+// Using Q.js
+someModule.makeAsyncCall()
+    .then(function () { /*...*/ })
+    .then(function () { /*...*/ })
+    .fail(function () { /*...*/ })
+    .finally(function () { /*...*/ })
+    .done();
+    
+// Using Async
+async.parallel([
+    function(cb) {
+        // ...
+        cb(1);
+    },
+    function(cb) {
+        // ...
+        cb(2);
+    }
+],
+function (err, results) {
+    // ...
+    // results = [1,2]
+})
+```
 #### 6. Use eventing and messaging to loosely couple your modules 
+1. Loose coupling solutions
+    1. jQuery events
+    2. AmplifyJS
+    3. AngularJS
+```javascript
+//--- jQuery
+// Publish Event
+$.event.trigger("our.event.name", ["some", "context"]);
 
+// Subscribe (requires DOM element)
+$(document).on("our.event.name",
+function (event, some, context) {
+    // ...
+});
 
+//--- AmplifyJS
+// Publish
+amplify.publish("our.message.name", "some", "context");
+
+// Subscribe
+amplify.subscribe("our.message.name", function (some, ctx) {
+    // ...
+});
+
+//--- AngularJS
+// Publish
+theApp.controller("bCtrl", function ($rootScope) {
+    $rootScope.$broadcast("our.message.name", "some", "context");
+});
+
+// Subscribe
+theApp.controller("aCtrl", function ($scope) {
+    $scope.$on("our.message.name", function (some, ctx) { /*...*/ })
+});
+```
+
+##### Summary
+* Avoiding the Global Scope means you have to worry less on the collision
+* Using strict JavaScript will highlight errors earlier
+* Structuring your code into modular units will increase stability
+* Injecting dependencies allows you to not handle the wire up of dependencies
+* Abandon nested callbacks in favor of promises or async patterns
+* Use eventing and messaging to loosely couple your modules

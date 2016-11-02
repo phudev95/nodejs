@@ -1,0 +1,15 @@
+{
+  "name": "02.large-scale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Phu Phan <phudev95@gmail.com>",
+  "license": "ISC"
+}

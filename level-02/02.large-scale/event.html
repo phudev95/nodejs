@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Event</h1>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Register event
+            $(document).on('our.event.name', function (event, some, context) {
+                console.warn('Event our.event.name is trigger!', arguments);
+            });
+
+            // Trigger event
+            $.event.trigger('our.event.name', ['some blabla', 'context blabla'])
+        });
+    </script>
+</body>
+</html>

@@ -206,6 +206,9 @@ theApp.controller("aCtrl", function ($scope) {
 #### 1. Knowing you have a problem is often the first task of scaling your JavaScript
 ![Screenshot](http://i.imgur.com/ouOQb1i.png)
 #### 2. Focusing on better code will make your application scale better
+1. Write less code
+2. App Architecture
+3. Smarter UI Coding
 #### 3. Being lazy about you execution is often a better approach
 #### 4. Minification will help you improve perfomance of downloads and parsing
 #### 5. Only loading the JavaScript required to do the job is also crucial

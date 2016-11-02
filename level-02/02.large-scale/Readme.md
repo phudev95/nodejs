@@ -1,4 +1,13 @@
+# JavaScript
 ## Maintainable
+##### Summary
+* Avoiding the Global Scope means you have to worry less on the collision
+* Using strict JavaScript will highlight errors earlier
+* Structuring your code into modular units will increase stability
+* Injecting dependencies allows you to not handle the wire up of dependencies
+* Abandon nested callbacks in favor of promises or async patterns
+* Use eventing and messaging to loosely couple your modules
+
 #### 1. Avoiding the Global Scope means you have to worry less on the collision
 1. Self-Executing Anonymous Functions (SEAF)
 2. Also called Self-Invoking Anonymous Functions (SIAF)
@@ -184,10 +193,20 @@ theApp.controller("aCtrl", function ($scope) {
 });
 ```
 
+
+## Scalable
 ##### Summary
-* Avoiding the Global Scope means you have to worry less on the collision
-* Using strict JavaScript will highlight errors earlier
-* Structuring your code into modular units will increase stability
-* Injecting dependencies allows you to not handle the wire up of dependencies
-* Abandon nested callbacks in favor of promises or async patterns
-* Use eventing and messaging to loosely couple your modules
+* Knowing you have a problem is often the first task of scaling your JavaScript
+* Focusing on better code will make your application scale better
+* Being lazy about you execution is often a better approach
+* Minification will help you improve perfomance of downloads and parsing
+* Only loading the JavaScript required to do the job is also crucial
+* Late loading JavaScript as it is needed is another useful technique
+
+#### 1. Knowing you have a problem is often the first task of scaling your JavaScript
+![Screenshot](http://i.imgur.com/ouOQb1i.png)
+#### 2. Focusing on better code will make your application scale better
+#### 3. Being lazy about you execution is often a better approach
+#### 4. Minification will help you improve perfomance of downloads and parsing
+#### 5. Only loading the JavaScript required to do the job is also crucial
+#### 6. Late loading JavaScript as it is needed is another useful technique

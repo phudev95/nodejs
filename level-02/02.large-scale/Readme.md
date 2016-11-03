@@ -210,6 +210,37 @@ theApp.controller("aCtrl", function ($scope) {
 2. App Architecture
 3. Smarter UI Coding
 #### 3. Being lazy about you execution is often a better approach
+![Screenshot](http://i.imgur.com/eATpjA8.png)
 #### 4. Minification will help you improve perfomance of downloads and parsing
-#### 5. Only loading the JavaScript required to do the job is also crucial
+```javascript
+// gruntfile.js
+grunt.initConfig({
+    uglify: {/*...*/},
+    build: {
+        files: {
+            'build/main.min.js': ["js/main.js"],
+            'build/base.min.js': ["js/destinations.js", "js/newtrip.js"]
+        }
+    }
+});
+```
+#### 5. Only loading the JavaScript required to do the job is also crucial (is important)
 #### 6. Late loading JavaScript as it is needed is another useful technique
+```javascript
+//--- LazyLoad
+// main.js
+// include lazyload.js
+$("#loadButton").on("click", function () {
+    LazyLoad.js(["js/build/trips.min.js"], function() {
+        // Do Work
+    });
+});
+
+//--- RequireJS 
+// main.js
+$("#loadButton").on("click", function () {
+    require(["destModule"], function(destModule) {
+        // use destModule as necessary
+    });
+});
+```

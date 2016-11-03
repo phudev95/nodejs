@@ -211,6 +211,7 @@ theApp.controller("aCtrl", function ($scope) {
 3. Smarter UI Coding
 #### 3. Being lazy about you execution is often a better approach
 ![Screenshot](http://i.imgur.com/eATpjA8.png)
+
 #### 4. Minification will help you improve perfomance of downloads and parsing
 ```javascript
 // gruntfile.js
@@ -223,7 +224,7 @@ grunt.initConfig({
         }
     }
 });
-```
+``` 
 #### 5. Only loading the JavaScript required to do the job is also crucial (is important)
 #### 6. Late loading JavaScript as it is needed is another useful technique
 ```javascript

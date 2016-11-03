@@ -209,6 +209,7 @@ theApp.controller("aCtrl", function ($scope) {
 1. Write less code
 2. App Architecture
 3. Smarter UI Coding
+
 #### 3. Being lazy about you execution is often a better approach
 ![Screenshot](http://i.imgur.com/eATpjA8.png)
 

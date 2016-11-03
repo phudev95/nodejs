@@ -245,3 +245,89 @@ $("#loadButton").on("click", function () {
     });
 });
 ```
+
+
+## Testable
+##### Summary
+* Event-driven, nested JavaScript is hard to test
+* Too many mixed concerns are a problem to testing
+* Maintainable and Scalable JavaScript should be easy to test 
+* Unit testing is critical, but don't get bogged down with dogma of process
+* Jasmine and GruntJS are a great combination to simplify this
+* Automating running unit tests can speed up your overall testing
+
+
+# Node.js 
+![Screenshot](http://i.imgur.com/PCaYOJg.png)
+
+## Scalable
+##### Summary
+* It is a great solution for server-side development when you have JavaScript skills
+* But it isn't magically suited to large scale projects
+* Still needs to be Maintainble, Scalable and Testable
+* Modularization and CommonJS are keys to maintainable JavaScript on the Server
+* For scalable JavaScript, understand your runtime environment
+* You still need to test your code, event if it is just on the server
+
+#### 1. It is a great solution for server-side development when you have JavaScript skills
+![Screenshot](http://i.imgur.com/EdrJJkI.png)
+
+#### 2. But it isn't magically suited to large scale projects
+#### 3. Still needs to be Maintainble, Scalable and Testable
+![Screenshot](http://i.imgur.com/sleoxHo.png)
+![Screenshot](http://i.imgur.com/ujwiUkh.png)
+
+
+#### 4. Modularization and CommonJS are keys to maintainable JavaScript on the Server
+![Screenshot](http://i.imgur.com/eOQhUqK.png)
+
+#### 5. For scalable JavaScript, understand your runtime environment
+1. Asynchrony
+2. Less code
+3. Optimize for V8
+```javascript
+// Callbacks
+var = require("fs");
+fs.readFile("./data/cities.json", function(err, data) {
+    if (err) {
+        handleError(err);
+    } else {
+        theCities = JSON.parse(data);
+    }
+});
+
+// Promises
+// npm install q
+var q = require('q');
+var defer = q.defer();
+fs.readFile("./data/cities.json", function(err, data) {
+    if (err) {
+        defer.reject(err);
+    } else {
+        theCities = JSON.parse(data);
+        defer.resolve(theCities);
+    }
+});
+return defer.promise;
+
+// Async
+// npm install async
+// Supports execution of callback style functions
+async.series([
+    // Call serially
+    function() {},
+    function() {}
+],
+function(err, results) {
+    // callback
+});
+async.parallel([ // Call in parallel
+    function() {},
+    function() {}
+],
+function(err, results) {
+    // callback
+});
+```
+
+#### 6. You still need to test your code, event if it is just on the server

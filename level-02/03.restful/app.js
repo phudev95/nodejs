@@ -2,7 +2,16 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-var db = mongoose.connect('mongodb://localhost/bookAPI');
+var db = null;
+if (process.env.ENV == 'Test') {
+    console.log('>> Run on ENV:Test');
+    db = mongoose.connect('mongodb://localhost/bookAPI-test');
+}
+else {
+    console.log('>> Run on ENV:Production');
+    db = mongoose.connect('mongodb://localhost/bookAPI-test');
+}
+
 var app = express();
 var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended:true}));
@@ -32,3 +41,5 @@ app.get('/', function(req, res){
 app.listen(port, function(){
     console.log('Gulp is running my app on http://127.0.0.1:' + port);
 });
+
+module.exports = app;

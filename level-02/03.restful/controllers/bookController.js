@@ -36,9 +36,19 @@ var bookController = function (bookModel) {
      */
     var postAddNewBook = function (req, res) {
         var book = new bookModel(req.body);
+        console.log("=================");
+        console.log(req.body);
+        console.log("//==========");
 
-        book.save();
-        res.status(201).send(book);
+        if (!req.body.title) {
+            res.status(401);
+            res.send('Title is required..');
+        }
+        else {
+            book.save();
+            res.status(201);
+            res.send(book);
+        }
     };
 
     /**

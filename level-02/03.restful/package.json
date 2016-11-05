@@ -7,10 +7,16 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
     "gulp-nodemon": "^2.2.1",
-    "mongoose": "^4.6.5"
+    "mongoose": "^4.6.5",
+    "should": "^11.1.1",
+    "sinon": "^1.17.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-env": "^0.4.0",
+    "supertest": "^0.15.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

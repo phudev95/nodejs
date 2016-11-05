@@ -51,3 +51,8 @@
     1. continue()
     2. `next()`
     3. It does so automatically.
+11. What method are we using from the Sinon framework to dummy up our objects?
+    1. Nothing
+    2. `Spy`
+    3. Dummy
+    4. Mock

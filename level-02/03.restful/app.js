@@ -14,12 +14,19 @@ app.use(function (req, res, next) {
 });
 
 // Routes
-var Book = require('./models/bookModel');
-var bookRouter = require('./Routes/bookRoutes')(Book);
+var bookModel = require('./models/bookModel');
+var bookRouter = require('./Routes/bookRoutes')(bookModel);
 app.use('/api/books', bookRouter);
 
 app.get('/', function(req, res){
-    res.send('welcome to my API!');
+    var data = '<h1>List links</h1>\
+                <ul>\
+                    <li><a href="/api/books">/api/books</a></li>\
+                    <li><a href="/api/books?genre=Female">/api/books?genre=Female</a></li>\
+                    <li><a href="/api/books?genre=Male">/api/books?genre=Male</a></li>\
+                </ul>';
+
+    res.send(data);
 });
 
 app.listen(port, function(){

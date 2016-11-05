@@ -1,38 +1,65 @@
-var bookController = function (Book) {
-    var get = function (req, res) {
+var bookController = function (bookModel) {
+    /**
+     * Get all books
+     * Maybe where data with genre
+     * @param req
+     * @param res
+     */
+    var getAllBooks = function (req, res) {
         var query = {};
 
         if (req.query.genre) {
             query.genre = req.query.genre;
         }
-        Book.find(query, function (err, books) {
-            if (err)
+        bookModel.find(query, function (err, books) {
+            if (err) {
                 res.status(500).send(err);
-            else
-                res.json(books);
+            }
+            else {
+                var returnBooks = [];
+                books.forEach(function (element, index, array) {
+                    var newBook = element.toJSON();
+                    newBook.links = {};
+                    newBook.links.self = 'http://' + req.headers.host + '/api/books/' + newBook._id;
+                    returnBooks.push(newBook);
+                });
+
+                res.json(returnBooks);
+            }
         });
     };
 
-    var post = function (req, res) {
-        var book = new Book(req.body);
+    /**
+     * Add new a book
+     * @param req
+     * @param res
+     */
+    var postAddNewBook = function (req, res) {
+        var book = new bookModel(req.body);
 
         book.save();
         res.status(201).send(book);
     };
 
-    var findOne = function (req, res) {
-        Book.findById(req.params.bookId, function (err, book) {
-            if (err)
-                res.status(500).send(err);
-            else
-                res.json(book);
-        });
+    /**
+     * Find a book with ID
+     * req.book Book data from middleware
+     * @param req
+     * @param res
+     */
+    var findBookById = function (req, res) {
+        console.log(32323);
+        var returnBook = req.book.toJSON();
+        returnBook.links = {};
+        returnBook.links.filterByThisGenre = 'http://' + req.headers.host + '/api/books/?genre=' + returnBook.genre;
+
+        res.send(returnBook);
     };
 
     return {
-        get: get,
-        post: post,
-        findOne: findOne
+        getAllBooks: getAllBooks,
+        postAddNewBook: postAddNewBook,
+        findBookById: findBookById
     }
 };
 

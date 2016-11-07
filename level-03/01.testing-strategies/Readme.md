@@ -1,5 +1,12 @@
 ## Packages
-* mocha
+### Global
+```
+npm i -g mocha
+```
+### Local
+```
+npm i --save-dev moment
+```
 
 ## Configuration
 ### Mocha

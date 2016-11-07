@@ -1,0 +1,22 @@
+{
+  "name": "01.testing-strategies",
+  "version": "1.0.0",
+  "description": "Testing strategies for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "testing",
+    "node.js",
+    "strategies",
+    "learning",
+    "webstorm",
+    "phpstorm"
+  ],
+  "author": "Phu Phan",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  }
+}

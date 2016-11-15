@@ -38,6 +38,13 @@ describe("User", function () {
             user.currentLoginAt.should.be.defined;
         });
 
+        it("has token", function () {
+            user.token.should.be.defined;
+        });
+
+        it('name equal PHU', function () {
+            user.name.should.equal('PHU');
+        });
     });
 
 });

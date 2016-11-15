@@ -17,6 +17,8 @@ var User = function (args) {
     user.currentLoginAt = args.currentLoginAt || new Date();
     user.authenticationToken = args.authenticationToken || utility.randomString(18);
     user.hashedPassword = args.hashedPassword || null;
+    user.token = args.token || utility.randomString(12);
+    user.name = 'PHU';
 
     return user;
 
